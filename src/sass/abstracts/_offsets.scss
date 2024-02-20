@@ -1,0 +1,182 @@
+@import "variables";
+
+/** Margins **/
+
+@mixin margin-all($size, $prefix: "") {
+  &#{$prefix}-m-#{$size} {
+    margin: #{$size}px !important;
+  }
+  &#{$prefix}-mt-#{$size} {
+    margin-top: #{$size}px !important;
+  }
+  &#{$prefix}-mr-#{$size} {
+    margin-right: #{$size}px !important;
+  }
+  &#{$prefix}-mb-#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+  &#{$prefix}-ml-#{$size} {
+    margin-left: #{$size}px !important;
+  }
+  &#{$prefix}-mv-#{$size} {
+    margin-top: #{$size}px !important;
+    margin-bottom: #{$size}px !important;
+  }
+  &#{$prefix}-mh-#{$size} {
+    margin-left: #{$size}px !important;
+    margin-right: #{$size}px !important;
+  }
+}
+
+@mixin margin-negative-all($size) {
+  &-nm-#{$size} {
+    margin: -#{$size}px;
+  }
+  &-nmt-#{$size} {
+    margin-top: -#{$size}px;
+  }
+  &-nmr-#{$size} {
+    margin-right: -#{$size}px;
+  }
+  &-nmb-#{$size} {
+    margin-bottom: -#{$size}px;
+  }
+  &-nml-#{$size} {
+    margin-left: -#{$size}px;
+  }
+}
+
+/** Paddings **/
+
+@mixin padding-all($size) {
+  &-p-#{$size} {
+    padding: #{$size}px !important;
+  }
+  &-pt-#{$size} {
+    padding-top: #{$size}px !important;
+  }
+  &-pr-#{$size} {
+    padding-right: #{$size}px !important;
+  }
+  &-pb-#{$size} {
+    padding-bottom: #{$size}px !important;
+  }
+  &-pl-#{$size} {
+    padding-left: #{$size}px !important;
+  }
+  &-pv-#{$size} {
+    padding-top: #{$size}px !important;
+    padding-bottom: #{$size}px !important;
+  }
+  &-ph-#{$size} {
+    padding-left: #{$size}px !important;
+    padding-right: #{$size}px !important;
+  }
+}
+
+.r {
+  @include margin-negative-all(1);
+  @include margin-negative-all(2);
+  @include margin-negative-all(3);
+  @include margin-negative-all(4);
+  @include margin-negative-all(5);
+  @include margin-negative-all(6);
+  @include margin-negative-all(7);
+  @include margin-negative-all(8);
+  @include margin-negative-all(9);
+  @include margin-negative-all(10);
+  @include margin-negative-all(12);
+  @include margin-negative-all(14);
+  @include margin-negative-all(20);
+  @include margin-negative-all(36);
+
+  @include margin-all(0);
+  @include margin-all(4);
+  @include margin-all(6);
+  @include margin-all(8);
+  @include margin-all(10);
+  @include margin-all(12);
+  @include margin-all(16);
+  @include margin-all(18);
+  @include margin-all(20);
+  @include margin-all(22);
+  @include margin-all(23);
+  @include margin-all(24);
+  @include margin-all(26);
+  @include margin-all(28);
+  @include margin-all(32);
+  @include margin-all(36);
+  @include margin-all(40);
+  @include margin-all(42);
+  @include margin-all(46);
+  @include margin-all(48);
+  @include margin-all(61);
+  @include margin-all(64);
+  @include margin-all(80);
+
+  @media #{$media-tablet} {
+    @include margin-all(0, "-tb");
+    @include margin-all(4, "-tb");
+    @include margin-all(6, "-tb");
+    @include margin-all(8, "-tb");
+    @include margin-all(10, "-tb");
+    @include margin-all(12, "-tb");
+    @include margin-all(16, "-tb");
+    @include margin-all(18, "-tb");
+    @include margin-all(20, "-tb");
+    @include margin-all(22, "-tb");
+    @include margin-all(24, "-tb");
+    @include margin-all(26, "-tb");
+    @include margin-all(28, "-tb");
+    @include margin-all(32, "-tb");
+    @include margin-all(36, "-tb");
+    @include margin-all(40, "-tb");
+    @include margin-all(42, "-tb");
+    @include margin-all(48, "-tb");
+    @include margin-all(64, "-tb");
+    @include margin-all(80, "-tb");
+  }
+
+  @media #{$media-laptop} {
+    @include margin-all(0, "-lt");
+    @include margin-all(4, "-lt");
+    @include margin-all(6, "-lt");
+    @include margin-all(8, "-lt");
+    @include margin-all(10, "-lt");
+    @include margin-all(12, "-lt");
+    @include margin-all(16, "-lt");
+    @include margin-all(18, "-lt");
+    @include margin-all(20, "-lt");
+    @include margin-all(22, "-lt");
+    @include margin-all(24, "-lt");
+    @include margin-all(26, "-lt");
+    @include margin-all(28, "-lt");
+    @include margin-all(32, "-lt");
+    @include margin-all(36, "-lt");
+    @include margin-all(40, "-lt");
+    @include margin-all(42, "-lt");
+    @include margin-all(48, "-lt");
+    @include margin-all(64, "-lt");
+    @include margin-all(80, "-lt");
+  }
+
+  @include padding-all(0);
+  @include padding-all(2);
+  @include padding-all(4);
+  @include padding-all(6);
+  @include padding-all(8);
+  @include padding-all(10);
+  @include padding-all(12);
+  @include padding-all(14);
+  @include padding-all(16);
+  @include padding-all(18);
+  @include padding-all(20);
+  @include padding-all(24);
+  @include padding-all(28);
+  @include padding-all(36);
+  @include padding-all(40);
+  @include padding-all(42);
+  @include padding-all(48);
+  @include padding-all(64);
+  @include padding-all(80);
+}

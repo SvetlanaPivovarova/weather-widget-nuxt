@@ -1,0 +1,80 @@
+@import "../abstracts/variables";
+
+.b-settings {
+  display: flex;
+  flex-direction: column;
+  color: $text-black;
+
+  &--title {
+    margin: 20px 0;
+  }
+
+  &--item {
+    list-style: none;
+    background-image: $purple-gradient;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    margin: 20px 0;
+
+    &-text {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  &--line {
+    display: flex;
+    align-items: center;
+  }
+
+  &--accent {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.30);
+    }
+
+    & > span,
+    & > span::before,
+    & > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      transition-duration: .25s;
+      z-index: 2;
+    }
+
+    & > span::before {
+      content: '';
+      top: -5px;
+    }
+
+    & > span::after {
+      content: '';
+      top: 5px;
+    }
+  }
+
+  .icon {
+    cursor: pointer;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.30);
+    }
+  }
+
+}

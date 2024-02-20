@@ -1,0 +1,32 @@
+@import "../abstracts/variables";
+
+.b-header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--wrapper {
+    display: flex;
+  }
+
+  &--heading {
+    font-size: 32px;
+    margin: 0 0 0 23px;
+  }
+
+  &--button {
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  .icon {
+
+  }
+}

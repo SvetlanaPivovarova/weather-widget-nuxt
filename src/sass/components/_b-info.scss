@@ -1,0 +1,68 @@
+@import "../abstracts/variables";
+
+.b-info {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.26);
+  flex-direction: column;
+  padding-bottom: 20px;
+
+  &--section {
+    display: flex;
+    align-items: center;
+  }
+
+  &--wrapper {
+    position: relative;
+    min-width: 250px;
+    height: 156px;
+  }
+
+  &--number {
+    font-size: 120px;
+
+    span {
+      font-size: 70px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &--text {
+    font-size: 22px;
+  }
+
+  &--grid {
+    font-size: 22px;
+    padding-top: 20px;
+
+    &-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px 53px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &-bold-text {
+      font-weight: 500;
+    }
+
+  }
+
+  &--loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--tooltip {
+    font-size: 20px;
+  }
+}
