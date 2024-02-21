@@ -1,7 +1,10 @@
 <template>
   <div class="b-info">
     <div class="b-info--section">
-      <div class="icon icon-100 icon-weather"></div>
+      <img
+          :src="getIcon"
+          alt="weather icon"
+      />
       <div class="b-info--wrapper">
         <p class="b-info--number">{{ getTemperature }} <span>&#8451;</span></p>
       </div>
@@ -59,6 +62,11 @@ export default {
     },
     getDescription() {
       return this.weather.weather[0].description
+    },
+    getIcon() {
+      const iconName = this.weather.weather[0].icon;
+      const getImageUrl = (iconName, size) => `http://openweathermap.org/img/wn/${iconName}@${size || '1x'}.png`
+      return getImageUrl(iconName, '4x')
     }
   },
 }

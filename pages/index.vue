@@ -58,12 +58,12 @@ export default {
       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`)
           .then((response) => response.json())
           .then((result) => {
+            console.log(result)
             this.locations.push({
               id: locationStorage.uid++,
               name: result.name,
             });
             locationStorage.save(this.locations);
-            console.log(this.locations)
           })
           .catch((error) => {
             console.log(error);
