@@ -9,11 +9,8 @@
     <div class="b-info--text">Feels like {{ getFeelsLike }} ℃, {{ getDescription }}</div>
   </div>
   <Info
-
       :wind="getWind"
       :humidity="getHumidity"
-      :pressure="getPressure"
-      :visibility="getVisibility"
   />
 
   <Modal :show="showModal" @close="showModal = false" >
@@ -25,13 +22,12 @@
 </template>
 
 <script>
-import Info from "./Info.vue";
-import Modal from "./Modal.vue";
-import Settings from "./Settings.vue";
+//import Info from "./Info.vue";
+//import Modal from "./Modal.vue";
+//import Settings from "./Settings.vue";
 
 export default {
   name: 'WeatherItem',
-  components: {Settings, Info, Modal },
   props: {
     weather: {
       type: Object,
@@ -57,12 +53,6 @@ export default {
     },
     getHumidity() {
       return Number(this.weather.main.humidity)
-    },
-    getPressure() {
-      return Number(this.weather.main.pressure)
-    },
-    getVisibility() {
-      return Number(this.weather.visibility)
     },
     getFeelsLike() {
       return Math.round(this.weather.main.feels_like)

@@ -1,37 +1,25 @@
 <template>
-  <main v-if="!isLoading">
-    <div v-for="item in arrayOfLocations" :key="item.id">
-      <Block :location-name="item.name"/>
+  <main>
+    <div v-if="!isLoading">
+      <div v-for="item in arrayOfLocations" :key="item.id">
+        <Block :location-name="item.name"/>
+      </div>
     </div>
+    <div v-if="isLoading" class="b-info--loader-container">
+      <Loader />
+    </div>
+
+    <Modal :show="showModal" @close="showModal = false" >
+      <template #body>
+        <p class="b-info--tooltip">{{ error }}</p>
+        <Settings @refresh="refresh = $event" />
+      </template>
+    </Modal>
   </main>
-  <div v-if="isLoading" class="b-info--loader-container">
-    <Loader />
-  </div>
-
-  <Modal :show="showModal" @close="showModal = false" >
-    <template #body>
-      <p class="b-info--tooltip">{{ error }}</p>
-      <Settings @refresh="refresh = true" />
-    </template>
-  </Modal>
-
 </template>
 
 <script>
-import Block from "../components/Block.vue";
-import { locationStorage } from "../utils/utils";
-import { API_KEY } from "../utils/constants";
-import Loader from "../components/Loader.vue";
-import Modal from "../components/Modal.vue";
-import Settings from "../components/Settings.vue";
-
 export default {
-  components: {
-    Loader,
-    Block,
-    Modal,
-    Settings
-  },
   data() {
     return {
       latitude: null,

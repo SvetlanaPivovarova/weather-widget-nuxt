@@ -31,6 +31,7 @@ $blue-gradient: linear-gradient(180deg, $black-blue 0%, rgba(0, 124, 151, 1) 100
 $blue-gradient-transparent: linear-gradient(180deg, rgba(0, 54, 71, .8) 0%, rgba(0, 124, 151, 0) 70%);
 $grey-gradient: linear-gradient($grey-500, $light-grey);
 $purple-gradient: linear-gradient(225deg, #9065BC 0%, rgba(255, 0, 108, 0.38) 100%);
+$light-gradient: linear-gradient(225deg, #fff 0%, rgba(0, 0, 0, 0.2) 100%);
 
 $border-grey: $grey-500;
 

@@ -6,16 +6,8 @@
         <p class="b-info--grid-bold-text">{{ wind }} m/s SSE <span class="icon icon-19 icon-wind"></span></p>
       </li>
       <li class="b-info--grid-item">
-        <p>Pressure</p>
-        <p class="b-info--grid-bold-text">{{ pressure }} hPa</p>
-      </li>
-      <li class="b-info--grid-item">
         <p>Humidity</p>
         <p class="b-info--grid-bold-text">{{ humidity }}%</p>
-      </li>
-      <li class="b-info--grid-item">
-        <p>Visibility</p>
-        <p class="b-info--grid-bold-text">{{ visibility }} km</p>
       </li>
     </ul>
   </div>
@@ -29,13 +21,7 @@ export default {
     },
     humidity: {
       type: Number
-    },
-    pressure: {
-      type: Number
-    },
-    visibility: {
-      type: Number
-    },
+    }
   }
 }
 </script>

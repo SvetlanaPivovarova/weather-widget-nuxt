@@ -22,7 +22,6 @@
 
 <script>
 import {API_KEY, PATTERN_NAME} from "../utils/constants";
-
 export default {
   name: 'AddLocationForm',
   emits: ['add'],

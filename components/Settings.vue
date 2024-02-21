@@ -31,11 +31,11 @@ export default {
     },
     'newItem'() {
       this.addLocation(this.newItem)
-      this.$emit('refresh')
+      this.$emit('refresh', true)
     },
     'deletedItem'() {
       this.removeLocation(this.deletedItem)
-      this.$emit('refresh')
+      this.$emit('refresh', true)
     }
   },
   methods: {

@@ -18,10 +18,9 @@
 </template>
 
 <script>
-import Modal from "./Modal.vue";
-import Settings from "./Settings.vue";
+//import Modal from "./Modal.vue";
+//import Settings from "./Settings.vue";
 export default {
-  name: 'HeaderComponent',
   props: {
     location: {
       type: String,
@@ -33,18 +32,6 @@ export default {
       showModal: false,
     }
   },
-  components: {
-    Settings,
-    Modal,
-  },
-  mounted() {
 
-
-  },
-  methods: {
-    changeSettings() {
-      alert('click')
-    }
-  }
 }
 </script>

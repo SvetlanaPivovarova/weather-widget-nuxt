@@ -1,13 +1,13 @@
 <template>
   <div class="background">
-    <HeaderComponent :location="locationName" />
+    <Header :location="locationName" />
     <WeatherItem :weather="getWeatherData" />
   </div>
 </template>
 
 <script>
-import HeaderComponent from './Header.vue';
-import WeatherItem from "./WeatherItem.vue";
+//import HeaderComponent from './Header.vue';
+//import WeatherItem from "./WeatherItem.vue";
 export default {
   name: 'BlockComponent',
   props: {
@@ -16,7 +16,6 @@ export default {
 
     }
   },
-  components: {HeaderComponent, WeatherItem},
   computed: {
     getWeatherData() {
       return JSON.parse(localStorage.getItem(`${this.locationName}`))

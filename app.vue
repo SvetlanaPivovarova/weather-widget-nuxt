@@ -1,11 +1,15 @@
 <template>
   <div>
-    <HomeView />
+    <!--<HomeView /> -->
+    <NuxtPage />
+
+    <p>JJ</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import HomeView from "/src/views/HomeView.vue";
+//import HomeView from "/src/views/HomeView.vue";
+//import Weather from "#build/components/Weather.vue";
 </script>
 
 <style lang="scss">
