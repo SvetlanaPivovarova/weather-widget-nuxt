@@ -5,6 +5,19 @@
         <Block :location-name="item.name"/>
       </div>
     </div>
+
+    <div v-if="weatherArray.length !== 0" class="b-info">
+      <div class="b-info--section">
+        <div class="b-info--wrapper">
+          <ul class="cards-wrapper">
+            <WeatherCard :weather-day="weatherArray[dayWeatherItem]" :weather-night="weatherArray[dayWeatherItem + 4]" />
+            <WeatherCard :weather-day="weatherArray[dayWeatherItem + 8]" :weather-night="weatherArray[dayWeatherItem + 12]" />
+            <WeatherCard :weather-day="weatherArray[dayWeatherItem + 16]" :weather-night="weatherArray[dayWeatherItem + 20]" />
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div v-if="isLoading" class="b-info--loader-container">
       <Loader />
     </div>
@@ -30,11 +43,12 @@ export default {
       locations: null,
       showModal: false,
       refresh: false,
+      weatherArray: [],
     }
   },
   mounted() {
     this.isLoading = true;
-    this.locations = locationStorage.fetch()
+    this.locations = locationStorage.fetch();
     if(this.locations.length === 0) {
       this.geoFindMe()
     }
@@ -50,6 +64,13 @@ export default {
             })
             .finally(() => this.isLoading = false);
       }
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.locations[0].name}&appid=${API_KEY}&units=metric`)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log('result', result.list)
+            this.weatherArray = result.list
+            localStorage.setItem(`${this.locations[0].name}.3days`, JSON.stringify(result));
+          })
     }
   },
   methods: {
@@ -96,5 +117,17 @@ export default {
       }
     },
   },
+  computed: {
+    dayWeatherItem() {
+      let a = 0;
+      for (let i = 0; i < this.weatherArray; i++) {
+        if (this.weatherArray[i].dt_txt.split(' ')[1] === "12:00:00") {
+          a = i;
+          break;
+        }
+      }
+      return a
+    }
+  }
 }
 </script>
