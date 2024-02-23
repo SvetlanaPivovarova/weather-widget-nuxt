@@ -1,6 +1,6 @@
 <template>
   <li class="background b-card">
-    <p class="r-mr-40">{{weatherDay.dt_txt.split(' ')[0]}}</p>
+    <p class="r-mr-10">{{weatherDay.dt_txt.split(' ')[0]}}</p>
 
     <p>День</p>
     <p>Ночь</p>
@@ -23,8 +23,8 @@ export default {
   computed: {
     getIcon() {
       const iconName = this.weatherDay.weather[0].icon;
-      const getImageUrl = (iconName, size) => `http://openweathermap.org/img/wn/${iconName}@${size || '1x'}.png`
-      return getImageUrl(iconName, '2x')
+      const getImageUrl = (iconName) => `http://openweathermap.org/img/wn/${iconName}.png`
+      return getImageUrl(iconName)
     }
   }
 }

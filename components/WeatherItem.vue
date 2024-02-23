@@ -6,7 +6,7 @@
           alt="weather icon"
       />
       <div class="b-info--wrapper">
-        <p class="b-info--number">{{ getTemperature }} <span>&#8451;</span></p>
+        <p class="b-info--number">{{ getTemperature }} &#8451;</p>
       </div>
     </div>
     <div class="b-info--text">Feels like {{ getFeelsLike }} ℃, {{ getDescription }}</div>
@@ -62,7 +62,7 @@ export default {
     getIcon() {
       const iconName = this.weather.weather[0].icon;
       const getImageUrl = (iconName, size) => `http://openweathermap.org/img/wn/${iconName}@${size || '1x'}.png`
-      return getImageUrl(iconName, '4x')
+      return getImageUrl(iconName, '2x')
     }
   },
 }

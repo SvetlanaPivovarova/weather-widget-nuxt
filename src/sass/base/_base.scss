@@ -15,9 +15,19 @@ body {
 
 .background {
   background-image: $purple-gradient;
-  padding: 20px 50px;
+  padding: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  margin-bottom: 2px;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
+
+  max-width: 320px;
+  
+  @media #{$media-tablet} {
+    margin: 0 auto;
+  }
 }

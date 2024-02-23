@@ -3,7 +3,6 @@
     <!--<HomeView /> -->
     <NuxtPage />
 
-    <p>JJ</p>
   </div>
 </template>
 

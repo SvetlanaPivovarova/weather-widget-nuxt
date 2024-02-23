@@ -1,5 +1,5 @@
 <template>
-  <main class="">
+  <main class="container">
 
     <div v-if="!isLoading" v-for="item in arrayOfLocations" :key="item.id">
         <Block :location-name="item.name"/>
