@@ -6,14 +6,11 @@
 </template>
 
 <script>
-//import HeaderComponent from './Header.vue';
-//import WeatherItem from "./WeatherItem.vue";
 export default {
   name: 'BlockComponent',
   props: {
     locationName : {
       type: String,
-
     }
   },
   computed: {

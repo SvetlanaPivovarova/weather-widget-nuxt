@@ -25,10 +25,6 @@
 </template>
 
 <script>
-//import Info from "./Info.vue";
-//import Modal from "./Modal.vue";
-//import Settings from "./Settings.vue";
-
 export default {
   name: 'WeatherItem',
   props: {

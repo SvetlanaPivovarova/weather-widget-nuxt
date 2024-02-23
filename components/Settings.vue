@@ -9,14 +9,11 @@
 </template>
 
 <script>
-import LocationItem from "./LocationItem.vue";
-import AddLocationForm from "./AddLocationForm.vue";
 
 import { locationStorage } from "../utils/utils";
 
 export default {
   name: 'SettingsComponent',
-  components: { AddLocationForm, LocationItem },
   data() {
     return {
       locations: locationStorage.fetch(),

@@ -8,6 +8,7 @@
           id="text"
           placeholder="Your new location to observe the weather"
           v-model="newLocation"
+          @keyup.enter="addLocation"
       />
       <button
           class="icon icon-58 icon--add button--add"
@@ -25,9 +26,12 @@ import {API_KEY, PATTERN_NAME} from "../utils/constants";
 export default {
   name: 'AddLocationForm',
   emits: ['add'],
+  props: {
+    defaultValue: String
+  },
   data() {
     return {
-      newLocation: null,
+      newLocation: this.defaultValue,
       locations: [],
       errorMessage: null
     }

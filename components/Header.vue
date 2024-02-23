@@ -4,10 +4,11 @@
       <div class="icon icon-44 icon-location"></div>
       <h2 class="b-header--heading">{{ location }}</h2>
     </div>
+    <!--
     <div>
       <button class="b-header--button icon icon-settings"  @click="showModal = true">
       </button>
-    </div>
+    </div> -->
   </header>
   <Modal :show="showModal" @close="showModal = false" >
     <template #body>

@@ -1,9 +1,8 @@
 <template>
-  <main>
-    <div v-if="!isLoading">
-      <div v-for="item in arrayOfLocations" :key="item.id">
+  <main class="">
+
+    <div v-if="!isLoading" v-for="item in arrayOfLocations" :key="item.id">
         <Block :location-name="item.name"/>
-      </div>
     </div>
 
     <div v-if="weatherArray.length !== 0" class="b-info">
@@ -44,6 +43,8 @@ export default {
       showModal: false,
       refresh: false,
       weatherArray: [],
+      newItem: null
+
     }
   },
   mounted() {
@@ -67,7 +68,6 @@ export default {
       fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.locations[0].name}&appid=${API_KEY}&units=metric`)
           .then((response) => response.json())
           .then((result) => {
-            console.log('result', result.list)
             this.weatherArray = result.list
             localStorage.setItem(`${this.locations[0].name}.3days`, JSON.stringify(result));
           })
@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     handleSuccess(position) {
-      console.log(position.coords.latitude)
       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`)
           .then((response) => response.json())
           .then((result) => {
